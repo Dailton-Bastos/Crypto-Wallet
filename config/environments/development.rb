@@ -1,6 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+    # Foreman Fix
+  $stdout.sync = true
 
+    # Better Errors Config
+  BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
+
+  if defined?(BetterErrors) && ENV["SSH_CLIENT"]
+    host = ENV["SSH_CLIENT"].match(/\A([^\s]*)/)[1]
+    BetterErrors::Middleware.allow_ip! host if host
+    config.web_console.whitelisted_ips = host
+  end
+  
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
