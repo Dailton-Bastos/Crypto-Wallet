@@ -1,4 +1,5 @@
 class CoinsController < ApplicationController
+  layout "adm" #Informando qual será o layout
   before_action :set_coin, only: [:show, :edit, :update, :destroy]
 
   # GET /coins

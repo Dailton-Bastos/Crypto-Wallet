@@ -2,11 +2,7 @@
 <p> Sistema <strong><%= nome_aplicacao %></strong> </p>
 <p><strong>Data - </strong> <%= data_br(Date.today) %></p>
 
-<ul> 
-  <li>
-    <%= link_to  "Cadastro de Moedas", coins_path %>
-  </li>
-</ul>
+<%= render  "menu" %>
 
 <p>
   Identificando o ambiente Rails <strong> <%= ambiente_rails %> </strong> 
