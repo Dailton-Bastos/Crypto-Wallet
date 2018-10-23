@@ -5,30 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-spinner = TTY::Spinner.new("[:spinner] Cadastrando moedas ")
-spinner.auto_spin 
 
-coins = [ 
-      {
-        description: "Bitcoin",
-        acronym: "BTC",
-        url_image: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png"
-      },
-
-      {  
-        description: "Ethereum",
-        acronym: "BTC",
-        url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png"
-      },
-
-      {  
-        description: "Dash",
-        acronym: "DASH",
-        url_image: "http://cryptowiki.net/images/5/55/Dash.png"
-      }
-]
-
-coins.each do |coin|
-  Coin.find_or_create_by!(coin)
-end
-spinner.success("(Concluído)")
+# Use o rails dev:setup (lib/taks/dev.rake)
