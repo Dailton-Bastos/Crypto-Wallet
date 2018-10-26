@@ -1,9 +1,16 @@
 module ApplicationHelper
+  
+  #Helper que verifica o idioma da aplicação
+  def locale(locale)
+    I18n.locale == :en ? "Estados Unidos" : "Português BR"
+  end
+  
   #Criando um helper para data e hora
+=begin
   def data_br(data_us)
     data_us.strftime("%d/%m/%Y")
   end
-
+=end
   # Helper que retorna o nome da App
   def nome_aplicacao
     "Crypto Wallet"
