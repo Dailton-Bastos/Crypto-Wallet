@@ -1,7 +1,7 @@
 <h1>Seja Bem-Vindo</h1>
-<p>O idioma do sistema é: <strong><%= locale(I18n.locale) %></strong></p>
-<p> Sistema <strong><%= nome_aplicacao %></strong> </p>
-<p><strong>Data - </strong> <%= Date.today %></p>
+<p>O idioma do sistema é: <strong><%= locale %></strong></p>
+<p><strong>Data - </strong> <%= l(Date.today) %></p>
+<p><%= I18n.t('hello') %></p>
 
 <%= render  "menu" %>
 

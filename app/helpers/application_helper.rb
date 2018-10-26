@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   #Helper que verifica o idioma da aplicação
-  def locale(locale)
+  def locale
     I18n.locale == :en ? "Estados Unidos" : "Português BR"
   end
   
