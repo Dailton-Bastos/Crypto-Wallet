@@ -1,9 +1,9 @@
 module ApplicationHelper
   
   #Helper que verifica o idioma da aplicação
-  def locale
-    I18n.locale == :en ? "Estados Unidos" : "Português BR"
-  end
+  #def locale
+  #  I18n.locale == :en ? "Estados Unidos" : "Português BR"
+  #end
   
   #Criando um helper para data e hora
 =begin
