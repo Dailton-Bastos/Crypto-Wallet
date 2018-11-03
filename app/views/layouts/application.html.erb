@@ -5,8 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,10 +15,27 @@
   </head>
 
   <body>
-  <h1>CABEÇALHO <%= params[:controller] %></h1>
-    <%= yield %> <%#index.html.erb, edit.html.erb, etc..%>
-  <h1>RODAPÉ</h1>
+    <div class="container-fluid">
+      <!-- As a heading -->
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Crypto Wallet</span>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
 
-  <script>$.notify("Funcionou", "success");</script>
+          <li class="nav-item">
+            <%= link_to "Português", root_path(locale: 'pt-BR'), class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "English", root_path(locale: 'en'), class: "nav-link" %>
+          </li>
+        </ul>
+      </nav>
+
+
+        <%= yield %> <%#index.html.erb, edit.html.erb, etc..%>
+    </div>
   </body>
 </html>

@@ -1,23 +1,9 @@
-<!-- Link para alterar o idioma da App -->
-<p>
-  <%= link_to  "Português", root_path(locale: 'pt-BR') %>
-</p>
+<div class="jumbotron my-4">
+  <h1 class="display-4">Seja Bem-Vindo!</h1>
+    <p class="lead">Este é o Crypto Wallet, uma app para você cadastrar e acompanhar as suas
+    criptomoedes.</p>
 
-<p>
-  <%= link_to  "English", root_path(locale: 'en') %>
-</p>
-
-<!-- -->
-
-<h1>Seja Bem-Vindo</h1>
-<p>O idioma do sistema é: <strong><%= t('actual_locale') %></strong></p>
-<p><strong>Data - </strong> <%= l(Date.today) %></p>
-<p><%= I18n.t('hello') %></p>
-
-<%= render  "menu" %>
-
-<p>
-  Identificando o ambiente Rails <strong> <%= ambiente_rails %> </strong> 
-</p>
-
-<p>Nome do Curso: <%= @nome_curso %></p>
+  <hr class="my-4">
+    <p>Para começar, selecione uma das opções abaixo.</p>
+  <%= render  "menu" %>
+</div>
