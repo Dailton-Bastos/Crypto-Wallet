@@ -35,7 +35,9 @@ en:
   messages:
     welcome: This is Crypto Wallet, an app that you can register and keep up with your cryptocoins.
     menu: To start, choose an option below.
+    confirm: Are you sure?
   links:
     edit: Edit
     show: Show
     delete: Delete
+    new: New
