@@ -45,6 +45,7 @@ en:
   new:
     coin: New Coin
     mining_type: New Mining Type
+    select: "Select..."
   editing:
     coin: Editing Coin
     mining_type: Editing Mining Type

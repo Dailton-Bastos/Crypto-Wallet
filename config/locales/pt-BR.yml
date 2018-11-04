@@ -14,6 +14,7 @@ pt-BR:
   new:
     coin: Nova Moeda
     mining_type: Novo Tipo de Mineração
+    select: Selecione...
   editing:
     coin: Editando Moeda
     mining_type: Editando Tipo de Mineraçao
