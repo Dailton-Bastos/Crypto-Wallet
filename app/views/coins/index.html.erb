@@ -1,33 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <!-- Deixando o nome do titulo no plural -->
-<h1><%= Coin.model_name.human(count: @coins.count) %></h1>
-
-<table class="table table-hover">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col"><%= @coins.human_attribute_name(:description) %></th>
-      <th scope="col"><%= @coins.human_attribute_name(:acronym) %></th>
-      <th scope="col"><%= @coins.human_attribute_name(:image) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @coins.each do |coin| %>
+<h1 class="font-weight-boldb text-center my-4"><%= Coin.model_name.human(count: @coins.count) %></h1>
+<div class="container">
+  <table class="table table-hover">
+    <thead class="thead-light">
       <tr>
-        <td><%= coin.description %></td>
-        <td><%= coin.acronym %></td>
-        <td><%= image_tag coin.url_image, size: "25x25" %></td>
-        <td><%= link_to t('links.show'), coin %></td>
-        <td><%= link_to t('links.edit'), edit_coin_path(coin) %></td>
-        <td><%= link_to t('links.delete'), coin, method: :delete, data: 
-        { confirm: t('messages.confirm') } %></td>
+        <th scope="col"><strong><%= @coins.human_attribute_name(:description) %></strong></th>
+        <th scope="col"><strong><%= @coins.human_attribute_name(:acronym) %></strong></th>
+        <th scope="col"><strong><%= @coins.human_attribute_name(:image) %></strong></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @coins.each do |coin| %>
+        <tr>
+          <td><%= coin.description %></td>
+          <td><%= coin.acronym %></td>
+          <td><%= image_tag coin.url_image, size: "25x25" %></td>
+          <td><%= link_to t('links.show'), coin, class: "badge badge-primary" %></td>
+          <td><%= link_to t('links.edit'), edit_coin_path(coin), class:"badge badge-success" %></td>
+          <td><%= link_to t('links.delete'), coin, method: :delete, data: 
+          { confirm: t('messages.confirm') }, class:"badge badge-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to t('new.coin'), new_coin_path, class: "btn btn-primary" %>
+  <br>
+
+  <%= link_to t('new.coin'), new_coin_path, class: "btn btn-primary" %>
+</div>

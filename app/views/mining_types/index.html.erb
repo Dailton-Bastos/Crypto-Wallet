@@ -1,30 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
+<div class="container">
+  <h1 class="font-weight-boldb text-center my-4">
+  <%= MiningType.model_name.human(count: @mining_types.count) %></h1>
 
-<table class="table table-hover">
-  <thead class="thead-light">
-    <tr>
-      <th><%= @mining_types.human_attribute_name(:description) %></th>
-      <th><%= @mining_types.human_attribute_name(:acronym) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mining_types.each do |mining_type| %>
+  <table class="table table-hover">
+    <thead class="thead-light">
       <tr>
-        <td><%= mining_type.description %></td>
-        <td><%= mining_type.acronym %></td>
-        <td><%= link_to t('links.show'), mining_type %></td>
-        <td><%= link_to t('links.edit'), edit_mining_type_path(mining_type) %></td>
-        <td><%= link_to t('links.delete'), mining_type, method: :delete, data: 
-        { confirm: t('messages.confirm') } %></td>
+        <th><strong><%= @mining_types.human_attribute_name(:description) %></strong></th>
+        <th><strong><%= @mining_types.human_attribute_name(:acronym) %></strong></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @mining_types.each do |mining_type| %>
+        <tr>
+          <td><%= mining_type.description %></td>
+          <td><%= mining_type.acronym %></td>
+          <td><%= link_to t('links.show'), mining_type, class: "badge badge-primary" %></td>
+          <td><%= link_to t('links.edit'), edit_mining_type_path(mining_type), 
+          class:"badge badge-success" %></td>
+          <td><%= link_to t('links.delete'), mining_type, method: :delete, data: 
+          { confirm: t('messages.confirm') }, class:"badge badge-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to t('new.mining_type'), new_mining_type_path, class: "btn btn-primary" %>
+  <br>
+
+  <%= link_to t('new.mining_type'), new_mining_type_path, class: "btn btn-primary" %>
+</div>
